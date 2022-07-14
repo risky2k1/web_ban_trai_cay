@@ -12,29 +12,31 @@ function ListProductShop(props) {
   const location = useLocation();
   const navigate = useNavigate();
   const a = queryString.parse(location.search);
+  // console.log(location.search);
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await productApi.getAll()
-        console.log(response)
+        const response = await productApi.getAll(location.search)
+        // console.log(response)
         setProductList(response)
       } catch (err) {
         console.error(err)
       }
     })()
-  }, [])
+  }, [location.search])
+  // if (location.search != '')
   // useEffect(() => {
   //   (async () => {
   //     try {
-  //       const response = await productApi.getProductByFilter()
-  //       // console.log(response)
+  //       const response = await productApi.getProductByFilter(location.search)
+  //       // console.log("Khanh ngu", response)
   //       setProductList(response)
   //     } catch (err) {
   //       console.error(err)
   //     }
   //   })()
-  // }, [])
+  // }, [location.search])
   return (
     <>
       <div className="col-lg-9 col-md-8 col-12">

@@ -11,11 +11,28 @@ function FilterBy(props) {
   const navigate = useNavigate();
   const a = queryString.parse(location.search);
   const x = a.categoryId;
+  // document.querySelector('[data-id="value"]');
+  // console.log(document.querySelector(`[data-id=${x}]`));
+  useEffect(() => {
+    (() => {
+
+      console.log("khanh2", document.getElementById('eeadf6ec-dd7f-482c-b434-ad8c8a1d6057'));
+
+    })()
+  })
+
+  if (typeof x === 'string') {
+
+    console.log(document.querySelector(`[data-id=${x}]`));
+    // document.querySelector(`[data-id=${x}]`).checked = true
+  }
   function handleChange(e) {
     var data = [];
     if (Object.keys(a).length !== 0) {
       if (typeof x === 'string') {
         data = [x];
+        console.log(document.querySelector(`[data-id=${x}]`));
+        document.querySelector(`[data-id=${x}]`).checked = true
       } else {
         data = [...x];
       }
@@ -40,7 +57,7 @@ function FilterBy(props) {
         <ul className="all-option collapse" id="category-filter">
           {props.listfilter.map((item, index) => (
             <li className="grid-list-option">
-              <input type="checkbox" onChange={handleChange} data-id={item.id} data-index={index} />
+              <input type="checkbox" onChange={handleChange} data-id={item.id} data-index={index} id={item.id} />
               <a href="javascript:void(0)">{item.name}<span className="grid-items">({item.count})</span></a>
             </li>
           ))}
