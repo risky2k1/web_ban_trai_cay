@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "..\\.."
+    },
+    {
+      "path": "..\\..\\..\\FE_DEV\\FE_REACTJS\\Router"
+    },
+    {
+      "path": "..\\..\\..\\Json-Sever"
+    },
+    {
+      "path": "..\\..\\..\\Json\\json-server"
+    },
+    {
+      "path": "..\\..\\..\\Reactjs_thoi\\myshop-main"
+    }
+  ],
+  "settings": {
+    "explorer.compactFolders": false
+  }
+}
